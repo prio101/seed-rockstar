@@ -1,20 +1,21 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 col-md-offset-2">
       <table class="table table-bordered table-condensed">
         <tr>
           <th>Title</th>
           <th>Postion</th>
           <th>Company Name</th>
           <th>Location</th>
-          <th>View</th>
+          <th>Action</th>
         </tr>
-        <tr>
+
           <% @jobs.each do |job| %>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
+          <tr>
+          <td><%= job.title %></td>
+          <td><%= job.postiion %></td>
+          <td><% job.company_name %></td>
+          <td><%= job.location %></td>
           <td>
             <%= link_to 'Show', job , class:"btn btn-info"%>
             <% if(admin_signed_in?) %>
@@ -22,8 +23,9 @@
               <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
           </td>
+          </tr>
           <% end %>
-        </tr>
+
       </table>
     </div>
   </div>

@@ -1,4 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%= render "partials/notice_alert" %>
+<div class="container">
+  <div class="row">
+    <div class="panel panel-info col-md-6 col-md-offset-3">
+      <div class="panel-heading">
+        <h2 class="panel-title"><%= @job.title %>  at  <em><%= @job.company_name %></em></h2>
+      </div>
+      <div class="panel-body">
+        <ul class="list-group">
+          <li class="list-group-item">Position: <%= @job.postiion %></li>
+          <li class="list-group-item">Description: <%= @job.description %></li>
+          <li class="list-group-item">Salary: <%= @job.salary %></li>
+          <li class="list-group-item">Work Location: <%= @job.location %></li>
+          <li class="list-group-item">Company Address: <%= @job.company_address %></li>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+        </ul>
+      </div>
+    </div>
+
+    <% if(admin_signed_in?) %>
+      <%= link_to 'Edit', edit_job_path(@job) , class: "btn btn-info" %> |
+    <% end %>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-md-offset-3">
+      <%= link_to 'Back', jobs_path , class: "btn btn-default "%>
+    </div>
+  </div>
+  
+</div>
