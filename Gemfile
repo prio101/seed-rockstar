@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "puma"
 # DEvise
 gem "devise"
+# Bootstrap views devise
+gem 'devise-bootstrap-views'
 # bootstrap
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # faker
