@@ -31,6 +31,11 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # faker
 gem 'faker', '~> 1.6', '>= 1.6.3'
 
+
+# Kaminari
+gem 'kaminari'
+# Kaminari bootstrap
+gem 'bootstrap-kaminari-views'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
