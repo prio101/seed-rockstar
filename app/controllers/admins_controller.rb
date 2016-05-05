@@ -1,15 +1,19 @@
 class AdminsController < ApplicationController
-  before_action :authenticate_admin!,:set_admin, only: [:index,:show, :edit, :update, :destroy]
-
+  before_action :set_admin, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin! ,  only: [:index,:show, :edit, :update, :destroy]
+  # custom layout
+  layout 'admin_layout'
   # GET /admins
   # GET /admins.json
   def index
-    @admins = Admin.all
+    @admin = Admin.all
+    @jobs  = Job.all
   end
 
   # GET /admins/1
   # GET /admins/1.json
   def show
+    @admin = :set_admin
   end
 
   # GET /admins/new
@@ -19,6 +23,7 @@ class AdminsController < ApplicationController
 
   # GET /admins/1/edit
   def edit
+    @admin = Admin.find(params[:id])
   end
 
   # POST /admins
