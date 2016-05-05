@@ -7,11 +7,12 @@ class AdminsController < ApplicationController
   # GET /admins.json
   def index
     @admin = Admin.all
-    @jobs  = Job.all
+    @jobs  = Job.order(id: :desc).page params[:page]
   end
   # GET /admins/jobs
-  def job
-    @jobs = Job.order(id: :order)
+  def jobs
+    @admin = Admin.all
+    @jobs = Job.order(id: :desc).page params[:page]
   end
 
   # GET /admins/1

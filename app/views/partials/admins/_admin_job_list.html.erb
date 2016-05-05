@@ -1,0 +1,32 @@
+<div class="col-md-8 col-md-offset-2">
+  <table class="table table-bordered table-condensed">
+    <tr>
+      <th>Title</th>
+      <th>Postion</th>
+      <th>Company Name</th>
+      <th>Location</th>
+      <th>Action</th>
+    </tr>
+
+      <% @jobs.each do |job| %>
+      <tr>
+      <td><%= job.title  %><%=job.id %> </td>
+      <td><%= job.postiion %></td>
+      <td><% job.company_name %></td>
+      <td><%= job.location %></td>
+      <td>
+        <%= link_to 'Show', job , class:"btn btn-info"%>
+        <% if(admin_signed_in?) %>
+          <%= link_to 'Edit', edit_job_path(job) , :class => "btn btn-primary" %>
+          <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } , :class => "btn btn-danger"%>
+        <% end %>
+      </td>
+      </tr>
+      <% end %>
+
+  </table>
+</div>
+
+<div class="col-md-offset-3">
+  <%= paginate @jobs , :theme=> 'twitter-bootstrap-3' , :pagination_class => 'pagination-sm' %>
+</div>
