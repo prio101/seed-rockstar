@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :users
+
   resources :jobs
-  devise_for :admins , :jobs ,:users
+  devise_for :admins , :jobs 
   #  resources :admins
   get 'admins/'     => 'admins#index'
   get 'admins/job/' => 'admins#jobs'
