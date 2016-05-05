@@ -4,7 +4,7 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.order(id: :desc).page params[:page] 
+    @jobs = Job.order(id: :desc).page params[:page]
   end
 
   # GET /jobs/1
@@ -19,6 +19,7 @@ class JobsController < ApplicationController
 
   # GET /jobs/1/edit
   def edit
+    @job = Job.find(params[:id])
   end
 
   # POST /jobs

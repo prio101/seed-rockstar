@@ -128,14 +128,13 @@
                       <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Jobs <i class="fa fa-fw fa-caret-down"></i></a>
                       <ul id="demo" class="collapse">
                           <li>
-                              <a href="#">List</a>
+                              <%= link_to "All Job List" , :controller => "admins" , :action =>"jobs" %>
                           </li>
+                          
                           <li>
-                              <a href="#">New</a>
+                              <%= link_to "New Job Entry" , :controller => "jobs" , :action => "new" %>
                           </li>
-                          <li>
-                            <a href="#">Promotion</a>
-                          </li>
+
                       </ul>
                   </li>
                   <li class="active">

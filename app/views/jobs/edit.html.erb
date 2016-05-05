@@ -1,6 +1,8 @@
-<h1>Editing Job</h1>
+<div class="text-center">
+  <h4>Edit the <strong><%= @job.title %></strong></h4>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @job %> |
-<%= link_to 'Back', jobs_path %>
+<%= link_to 'Show', @job , :class => "btn btn-success" %>
+<%= link_to 'Back', jobs_path , :class => "btn btn-default"%>
