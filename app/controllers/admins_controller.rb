@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
-  before_action :set_admin, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin! ,  only: [:index,:show, :edit, :update, :destroy]
+  before_action :set_admin, only: [:job,:show, :edit, :update, :destroy]
+  before_action :authenticate_admin! ,  only: [:index,:job,:show, :edit, :update, :destroy]
   # custom layout
   layout 'admin_layout'
   # GET /admins
@@ -8,6 +8,10 @@ class AdminsController < ApplicationController
   def index
     @admin = Admin.all
     @jobs  = Job.all
+  end
+  # GET /admins/jobs
+  def job
+    @jobs = Job.order(id: :order)
   end
 
   # GET /admins/1
