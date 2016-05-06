@@ -103,17 +103,21 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       <li>
-                          <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                          <%= link_to jobs_path do %>
+                            <i class="fa fa-fw fa-globe"></i> Visit Site
+                          <% end %>
                       </li>
                       <li>
                           <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
                       </li>
-                      <li>
-                          <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                      </li>
+
                       <li class="divider"></li>
                       <li>
-                          <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                          <% if(admin_signed_in?) %>
+                            <%= link_to  destroy_admin_session_path , :method => "delete" do%>
+                                <i class="fa fa-fw fa-power-off"></i> Logout
+                            <% end %>
+                          <% end %>
                       </li>
                   </ul>
               </li>
@@ -122,7 +126,9 @@
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
                   <li>
-                      <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                      <%= link_to admins_path do %>
+                          <i class="fa fa-fw fa-dashboard"></i> Dashboard
+                      <% end %>
                   </li>
                   <li>
                       <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Jobs <i class="fa fa-fw fa-caret-down"></i></a>
@@ -130,7 +136,7 @@
                           <li>
                               <%= link_to "All Job List" , :controller => "admins" , :action =>"jobs" %>
                           </li>
-                          
+
                           <li>
                               <%= link_to "New Job Entry" , :controller => "jobs" , :action => "new" %>
                           </li>
@@ -159,11 +165,15 @@
                       </h1>
                       <ol class="breadcrumb">
                           <li>
-                              <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                              <%= link_to admins_path , :class => "active" do %>
+                                  <i class="fa fa-dashboard"></i> Dashboard
+                              <% end %>
                           </li>
-                          <li class="active">
+                          
+                          <!-- <li class="active">
                               <i class="fa fa-file"></i> Blank Page
-                          </li>
+
+                          </li> -->
                       </ol>
                       <%= yield %>
                   </div>
