@@ -20,9 +20,22 @@ jobs = Job.create(
 
 end
 
-20.times do
-  users = User.create(
-    :title =>Faker::Lorem.word,
-    
-  )
-end
+# 20.times do
+#   users = User.create(
+#     :title =>Faker::Name.prefix,
+#     :first_name => Faker::Name.first_name,
+#     :last_name => Faker::Name.last_name,
+#     :middle_name => Faker::Name.last_name,
+#     :experience_time => Faker::Number.between(2,7),
+#     :email => Faker::Internet.email,
+#     :encrypted_password => "password",
+#     :skill_set => Faker::Lorem.word,
+#     :about => Faker::Lorem.sentence,
+#     :github_url => Faker::Internet.url('https://github.com/'),
+#     :linked_in_url => Faker::Internet.url('https://linkedin/'),
+#     :personal_site => Faker::Internet.url,
+#     :date_birth => Faker::Time.between(DateTime.now - 10000000 , DateTime.now),
+#     :month_birth => Faker::Number.between(1,12),
+#     :year_birth => Faker::Number.between(1990, 1994)
+#     )
+# end
