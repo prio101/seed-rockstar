@@ -1,0 +1,59 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group col-md-5 col-md-offset-4">
+    <%= f.label :title %>
+    <%= f.text_field :title , :class=>"form-control" %>
+
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name , :class=>"form-control" %>
+
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name , :class=>"form-control" %>
+
+    <%= f.label :middle_name %>
+    <%= f.text_field :middle_name , :class=>"form-control" %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email , :class=>"form-control" %>
+
+    <%= f.label :experience_time %>
+    <%= f.text_field :experience_time , :class=>"form-control" %>
+
+    <%= f.label :skill_set %>
+    <%= f.text_area :skill_set , :class=>"form-control" %>
+
+    <%= f.label :about %>
+    <%= f.text_area :about , :class=>"form-control" %>
+
+    <%= f.label :github_url %>
+    <%= f.text_field :github_url , :class=>"form-control" %>
+
+    <%= f.label :linked_in_url %>
+    <%= f.text_field :linked_in_url , :class=>"form-control" %>
+
+    <%= f.label :personal_site %>
+    <%= f.text_field :personal_site , :class=>"form-control" %>
+
+    <%= f.label :date_birth %>
+    <%= f.text_field :date_birth , :class=>"form-control" %>
+
+    <%= f.label :month_birth %>
+    <%= f.text_field :month_birth , :class=>"form-control" %>
+
+    <%= f.label :year_birth %>
+    <%= f.text_field :year_birth , :class=>"form-control" %>
+  </div>
+  <div class="actions col-md-12 text-center">
+    <%= f.submit "Save"  , :class => "btn btn-primary btn-lg"%>
+  </div>
+<% end %>

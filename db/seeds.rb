@@ -19,3 +19,10 @@ jobs = Job.create(
   );
 
 end
+
+20.times do
+  users = User.create(
+    :title =>Faker::Lorem.word,
+    
+  )
+end

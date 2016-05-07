@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  devise_for :users
+  resources :users
   resources :jobs
   devise_for :admins , :jobs 
   #  resources :admins
