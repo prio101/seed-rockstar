@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Mount Uploader
-  mount_uploader :avatar , AvatarUploader  
+  mount_uploader :avatar , AvatarUploader
+  mount_uploader :cv , CvUploader 
 end

@@ -38,6 +38,7 @@
                 <li class="list-group-item"><strong>Experience Time Period: </strong> <%= @user.experience_time %> Years</li>
                 <li class="list-group-item"><strong>Github Link: </strong> <%= link_to @user.github_url , @user.github_url , target: '_blank'%></li>
                 <li class="list-group-item"><strong>LinkedIn Url:</strong> <%= link_to @user.linked_in_url , @user.linked_in_url , target: '_blank' %></li>
+                <li class="list-group-item"><strong>CV:</strong> <%= link_to "CV Link of #{@user.first_name}" , @user.cv_url , :target=>"_blank" , :class=> "btn btn-primary" %></li>
               </ul>
 
             </div>
