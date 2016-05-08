@@ -37,6 +37,10 @@ gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'kaminari'
 # Kaminari bootstrap
 gem 'bootstrap-kaminari-views'
+# MiniMagick
+gem "mini_magick"
+# Carrierwave
+gem 'carrierwave'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

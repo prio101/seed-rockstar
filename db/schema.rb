@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506180411) do
+ActiveRecord::Schema.define(version: 20160508102908) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at",                          null: false
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20160506180411) do
     t.string   "github_url"
     t.string   "linked_in_url"
     t.string   "personal_site"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
